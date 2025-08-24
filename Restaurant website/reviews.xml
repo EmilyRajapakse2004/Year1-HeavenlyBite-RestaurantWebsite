@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews>
+  <item id="spring-rolls">
+    <ingredients>Cabbage, Carrot, Glass noodles, Soy sauce, Garlic</ingredients>
+    <description>Crunchy vegetarian spring rolls served with sweet chili sauce.</description>
+    <review>Light and crispy—perfect starter for any meal!</review>
+  </item>
+  <item id="bruschetta">
+    <ingredients>Baguette, Tomato, Basil, Olive oil, Garlic</ingredients>
+    <description>Freshly toasted bread topped with diced tomatoes and herbs.</description>
+    <review>Refreshing and full of flavor. A classic done right.</review>
+  </item>
+  <item id="loaded-nachos">
+    <ingredients>Tortilla chips, Cheese, Jalapeños, Salsa, Sour cream</ingredients>
+    <description>A cheesy and spicy delight topped with all your favorites.</description>
+    <review>Perfect for sharing—loaded with flavor and crunch!</review>
+  </item>
+  <item id="grilled-steak">
+    <ingredients>Beef steak, Garlic butter, Herbs, Pepper, Salt</ingredients>
+    <description>Juicy grilled steak cooked to perfection with herbed butter.</description>
+    <review>Melts in your mouth. A meat lover's dream!</review>
+  </item>
+  <item id="alfredo-pasta">
+    <ingredients>Fettuccine, Cream, Parmesan, Garlic, Chicken (optional)</ingredients>
+    <description>Creamy Alfredo sauce tossed with fresh pasta and cheese.</description>
+    <review>Smooth and indulgent, very comforting!</review>
+  </item>
+  <item id="chicken-curry">
+    <ingredients>Chicken, Coconut milk, Curry spices, Onion, Garlic</ingredients>
+    <description>Rich and flavorful chicken curry served with rice.</description>
+    <review>Authentic and warming. Spice level just right!</review>
+  </item>
+  <item id="cheesecake">
+    <ingredients>Cream cheese, Graham cracker crust, Vanilla, Sugar</ingredients>
+    <description>Classic baked cheesecake with a buttery crust.</description>
+    <review>Decadent and creamy—absolutely divine!</review>
+  </item>
+  <item id="chocolate-brownie">
+    <ingredients>Cocoa, Chocolate chips, Eggs, Butter, Sugar</ingredients>
+    <description>Rich chocolate brownie with a gooey center.</description>
+    <review>A chocoholic’s heaven. Warm and satisfying!</review>
+  </item>
+  <item id="tiramisu">
+    <ingredients>Mascarpone, Coffee, Ladyfingers, Cocoa, Cream</ingredients>
+    <description>Layered Italian dessert with espresso and mascarpone.</description>
+    <review>Elegant and perfectly balanced—loved every bite.</review>
+  </item>
+  <item id="lemonade">
+    <ingredients>Lemon, Sugar, Water, Mint</ingredients>
+    <description>Refreshing citrus drink served chilled with mint.</description>
+    <review>So refreshing! Great for a hot day.</review>
+  </item>
+  <item id="espresso-coffee">
+    <ingredients>Coffee beans, Water</ingredients>
+    <description>Strong and aromatic espresso shot made fresh.</description>
+    <review>Bold and energizing. A real wake-up call.</review>
+  </item>
+  <item id="fruit-smoothie">
+    <ingredients>Mango, Banana, Berries, Yogurt, Honey</ingredients>
+    <description>Healthy and delicious smoothie with seasonal fruits.</description>
+    <review>Fruity, sweet, and super satisfying!</review>
+  </item>
+</reviews>

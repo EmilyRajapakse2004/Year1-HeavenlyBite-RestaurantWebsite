@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Heavenly Bite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      background-color: #333;
+      color: #ecf1f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    nav .logo p {
+      color: #f9f8f8;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    nav .nav-links li {
+      margin-right: 20px;
+    }
+
+    nav .nav-links li a {
+      color: #f9f5f5;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    nav .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    nav .basket a {
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .checkout-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .checkout-container h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+    .checkout-section {
+      margin-bottom: 20px;
+    }
+    .checkout-section label {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .checkout-section input,
+    .checkout-section select,
+    .checkout-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .terms-conditions {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .terms-conditions input {
+      margin-right: 10px;
+    }
+    .place-order-btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2rem;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .place-order-btn:hover {
+      background-color: #000;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><p>Heavenly Bite</p></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="search-bar"><input type="text" placeholder="Search..."></div>
+      <div class="cart"><a href="cart.html">🛒</a></div>
+  </nav>
+
+  <div class="checkout-container">
+    <h2>Checkout Details</h2>
+    
+    <div class="checkout-section">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+    </div>
+
+    <div class="checkout-section">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+    </div>
+
+    <div class="checkout-section">
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="address" rows="4" placeholder="Enter your delivery address" required></textarea>
+    </div>
+
+    <div class="checkout-section">
+      <label for="payment-method">Payment Method</label>
+      <select id="payment-method" name="payment-method" required>
+        <option value="credit-card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="cash-on-delivery">Cash on Delivery</option>
+      </select>
+    </div>
+
+   
+    <div class="terms-conditions">
+      <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+      <label for="terms-conditions">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a></label>
+    </div>
+
+    <button id="place-order-btn" class="place-order-btn">Place Order</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('place-order-btn').addEventListener('click', function () {
+      const termsChecked = document.getElementById('terms-conditions').checked;
+      if (termsChecked) {
+        
+        window.location.href = 'order_confirmation.html';
+      } else {
+        alert('You must agree to the terms and conditions before placing an order.');
+      }
+    });
+  </script>
+
+</body>
+</html>

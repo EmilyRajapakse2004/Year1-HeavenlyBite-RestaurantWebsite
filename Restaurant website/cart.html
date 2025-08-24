@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Heavenly Bite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      color: #ecf1f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    nav .logo p {
+      color: #f9f8f8;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    nav .nav-links li {
+      margin-right: 20px;
+    }
+    nav .nav-links li a {
+      color: #f9f5f5;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    nav .nav-links li a:hover {
+      color: #f39c12;
+    }
+    nav .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+    nav .cart a {
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      padding: 20px;
+    }
+    .cart-container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .cart-item {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .cart-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .cart-item p {
+      margin: 5px 0;
+    }
+    .quantity-buttons {
+      display: flex;
+      align-items: center;
+    }
+    .quantity-buttons button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      font-size: 16px;
+      background-color: #f39c12;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .quantity-buttons button:hover {
+      background-color: #e67e22;
+    }
+    .remove-button {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-button:hover {
+      background-color: #c0392b;
+    }
+    .total-section {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      padding: 15px 0;
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><p>Heavenly Bite</p></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="search-bar"><input type="text" placeholder="Search..."></div>
+    <div class="cart"><a href="cart.html">🛒</a></div>
+  </nav>
+  
+  <header><h1>Your Cart</h1></header>
+  
+  <div class="cart-container">
+    <div id="cart-items">
+      <!-- Cart -->
+    </div>
+    
+    <div class="total-section">
+      <p><strong>Total:</strong> Rs <span id="total-price">0</span></p>
+      <button id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    
+    function renderCart() {
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p>Your cart is empty!</p>";
+        totalPriceElement.textContent = "0";
+      } else {
+        cartItemsContainer.innerHTML = '';  
+        
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          
+          cartItem.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>Price: Rs ${item.price}</p>
+            <div class="quantity-buttons">
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              <p>Quantity: ${item.quantity}</p>
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+            <button class="remove-button" onclick="removeItem(${index})">Remove</button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+        
+        updateTotal();
+      }
+    }
+    
+    function updateQuantity(index, change) {
+      const item = cart[index];
+      if (item.quantity + change > 0) {
+        item.quantity += change;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    }
+    
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+    
+    function updateTotal() {
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+      });
+      totalPriceElement.textContent = total;
+    }
+    
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      if (cart.length > 0) {
+        
+        window.location.href = 'checkout.html';
+      } else {
+     
+        alert('Your cart is empty! Please add some items before proceeding.');
+      }
+    });
+    
+    renderCart();
+  </script>
+</body>
+</html>

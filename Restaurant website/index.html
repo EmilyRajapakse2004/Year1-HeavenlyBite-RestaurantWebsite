@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heavenly Bite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+      
+        nav {
+            background-color: #333;
+            color: #ecf1f3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav .logo p {
+            color: #f9f8f8;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        nav .nav-links li {
+            margin-right: 20px;
+        }
+
+        nav .nav-links li a {
+            color: #f9f5f5;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav .nav-links li a:hover {
+            color: #f39c12;
+        }
+
+        nav .search-bar input {
+            padding: 8px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        nav .basket a {
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+       
+        .hero {
+        background: url('top.webp') no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fafaf9;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4); 
+        z-index: 1;
+    }
+
+    .hero-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+
+       
+        .top-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .top-image img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        
+        .popular-dishes {
+            background-color: #6f6a6a;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .popular-dishes h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .dishes-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap; 
+            gap: 20px;          
+            overflow-x: auto;   
+        }
+
+
+        .dish {
+            background-color: #fff;
+            width: 280px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .dish img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .dish:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+        .dish h3 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+
+        .dish p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .dish .price {
+            font-size: 1.2rem;
+            color: #f39c12;
+            margin-top: 15px;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <nav>
+        <div class="logo">
+            <p>Heavenly Bite</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="cart">
+            <a href="cart.html">🛒</a>
+        </div>
+    </nav>
+
+  
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Your Favorite Restaurant</h1>
+            <p>Delicious food, great ambiance, and unforgettable experiences.</p>
+        </div>
+    </section>
+
+
+    
+    <section class="popular-dishes">
+        <div class="dishes-container">
+            <div class="dish">
+                <img src="starters.jpg" alt="Starters">
+                <h3>STARTERS</h3>
+                <p>Kick off your meal with our tempting appetizers.</p>
+            </div>
+            <div class="dish">
+                <img src="main.jpg" alt="Mains">
+                <h3>MAINS</h3>
+                <p>Enjoy our hearty and flavorful main courses.</p>
+            </div>
+            <div class="dish">
+                <img src="desserts.webp" alt="Desserts">
+                <h3>DESSERTS</h3>
+                <p>Indulge in our delicious sweet treats.</p>
+            </div>
+            <div class="dish">
+                <img src="beve.jpg" alt="Beverages">
+                <h3>BEVERAGES</h3>
+                <p>Refresh with our selection of drinks.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

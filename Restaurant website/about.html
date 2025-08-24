@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Heavenly Bite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf9f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer, nav {
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo p {
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    nav .nav-links li {
+      margin-right: 20px;
+    }
+
+    nav .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    nav .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    nav .basket a {
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .team-member {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .team-member h3 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .team-member p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <p>Heavenly Bite</p>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="search-bar"><input type="text" placeholder="Search..."></div>
+    <div class="cart"><a href="cart.html">🛒</a></div>
+  </nav>
+
+  <div class="content">
+    <h1>About Heavenly Bite</h1>
+
+    <div class="section">
+      <h2>Our Story</h2>
+      <p>
+        Heavenly Bite began with a simple dream: to bring comfort, flavor, and community together under one roof. Since opening our doors in 2025, we’ve grown from a cozy local eatery into a beloved destination for food lovers. Whether you're craving international favorites or a sweet indulgence, every dish is crafted with heart.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to serve food that not only satisfies your appetite but also nourishes your soul. We believe in using fresh, locally-sourced ingredients to prepare meals that feel both nostalgic and exciting. Every plate tells a story, and we want our guests to feel like family.
+      </p>
+    </div>
+
+    <div class="section">
+        <h2>Meet the Team</h2>
+        <div class="team">
+          <div class="team-member">
+            <img src="chef1.jpeg" alt="Chef Liyana" style="width:100%; border-radius:10px;">
+            <h3>Chef Liyana</h3>
+            <p>Head Chef & Culinary Artist</p>
+          </div>
+          <div class="team-member">
+            <img src="chef2.jpeg" alt="David Lee" style="width:100%; border-radius:10px;">
+            <h3>David Lee</h3>
+            <p>Operations Manager</p>
+          </div>
+          <div class="team-member">
+            <img src="chef3.avif" alt="Maya Silva" style="width:100%; border-radius:10px;">
+            <h3>Maya Silva</h3>
+            <p>Pastry Specialist</p>
+          </div>
+          <div class="team-member">
+            <img src="chef4.jpeg" alt="Sanjay Patel" style="width:100%; border-radius:10px;">
+            <h3>Sanjay Patel</h3>
+            <p>Guest Experience Lead</p>
+          </div>
+        </div>
+      </div>      
+
+    <div class="section">
+      <h2>Why Choose Us?</h2>
+      <p>
+        ✔️ Fresh, high-quality ingredients sourced locally<br>
+        ✔️ A diverse menu with global influences<br>
+        ✔️ Warm and welcoming ambiance for all ages<br>
+        ✔️ Dedicated team with a passion for hospitality<br>
+        ✔️ Vegan, gluten-free, and allergy-friendly options
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Join Our Journey</h2>
+      <p>
+        We’re more than a restaurant – we’re a community. Follow us on social media, share your #HeavenlyBite moments, or simply drop by for a bite that feels like home. Thank you for making us a part of your story!
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+  </footer>
+</body>
+</html>

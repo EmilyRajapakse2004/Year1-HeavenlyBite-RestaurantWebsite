@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Heavenly Bite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf9f5;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    nav {
+      background-color: #333;
+      color: #ecf1f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    nav .logo p {
+      color: #f9f8f8;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    nav .nav-links li {
+      margin-right: 20px;
+    }
+
+    nav .nav-links li a {
+      color: #f9f5f5;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    nav .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    nav .basket a {
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-info {
+      margin-bottom: 40px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .contact-info p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form button {
+      padding: 12px 20px;
+      background-color: #555;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #000;
+    }
+
+    .map-container {
+      margin-top: 40px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <p>Heavenly Bite</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+    </div>
+    <div class="cart">
+      <a href="cart.html">🛒</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>Address:</strong> Heavenly Bite Restaurant, 12/B second cross Street, Colombo, Sri Lanka</p>
+      <p><strong>Phone:</strong> +94 77 123 4567</p>
+      <p><strong>Email:</strong> contact@heavenlybite.com</p>
+      <p><strong>Opening Hours:</strong><br>
+         Monday - Friday: 10:00 AM - 10:00 PM<br>
+         Saturday - Sunday: 11:00 AM - 11:00 PM
+      </p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="map-container">
+      <h2>Find Us</h2>
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6092724572463!2d79.84938177415549!3d6.937213793062772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25921df16fa77%3A0xf0a040b41ce72db2!2s2nd%20Cross%20Street%2C%20Colombo!5e0!3m2!1sen!2slk!4v1743921504537!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+  </footer>
+</body>
+</html>

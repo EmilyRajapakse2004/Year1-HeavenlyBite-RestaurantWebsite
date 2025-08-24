@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu | Heavenly Bite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf9f5;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      background-color: #333;
+      color: #ecf1f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    nav .logo p {
+      color: #f9f8f8;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    nav .nav-links li {
+      margin-right: 20px;
+    }
+
+    nav .nav-links li a {
+      color: #f9f5f5;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    nav .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    nav .basket a {
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #555;
+      color: white;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button:hover,
+    .filter-buttons button.active {
+      background-color: #000000;
+    }
+
+    .menu-section {
+      padding: 10px 30px;
+    }
+
+    .menu-section h2 {
+      margin-bottom: 10px;
+      text-align: left;
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    min-height: 360px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .menu-item.hidden-by-search {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+    .menu-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .menu-item h3 {
+      margin: 15px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    .menu-item p {
+      font-size: 0.95rem;
+      padding: 0 10px;
+      color: #555;
+    }
+
+    .menu-item .price {
+      font-weight: bold;
+      color: #f39c12;
+      margin-bottom: 10px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+      <div class="logo"><p>Heavenly Bite</p></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="search-bar"><input type="text" placeholder="Search..."></div>
+      <div class="cart"><a href="cart.html">🛒</a></div>
+    </nav>
+  
+    <header><h1>Menu</h1></header>
+  
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="appetizer">Appetizers</button>
+      <button class="filter-btn" data-category="main">Mains</button>
+      <button class="filter-btn" data-category="dessert">Desserts</button>
+      <button class="filter-btn" data-category="beverage">Beverages</button>
+    </div>
+  
+   
+    <div class="menu-section category-section appetizer">
+      <h2>Appetizers</h2>
+      <div class="menu-container">
+        <div class="menu-item appetizer" data-id="spring-rolls">
+          <img src="appertizer1.jpeg" alt="spring-rolls">
+          <h3>Spring Rolls</h3>
+          <p class="price">Rs 320</p>
+        </div>
+        <div class="menu-item appetizer" data-id="bruschetta">
+          <img src="appertizer2.jpeg" alt="bruschetta">
+          <h3>Bruschetta</h3>
+          <p class="price">Rs 280</p>
+        </div>
+        <div class="menu-item appetizer" data-id="loaded-nachos">
+          <img src="appertizer3.jpeg" alt="loaded-nachos">
+          <h3>Loaded Nachos</h3>
+          <p class="price">Rs 350</p>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="menu-section category-section main">
+      <h2>Mains</h2>
+      <div class="menu-container">
+        <div class="menu-item main" data-id="grilled-steak">
+          <img src="main1.jpeg" alt="grilled-steak">
+          <h3>Grilled Steak</h3>
+          <p class="price">Rs 890</p>
+        </div>
+        <div class="menu-item main" data-id="alfredo-pasta">
+          <img src="main2.jpg" alt="alfredo-pasta">
+          <h3>Alfredo Pasta</h3>
+          <p class="price">Rs 620</p>
+        </div>
+        <div class="menu-item main" data-id="chicken-curry">
+          <img src="main3.jpeg" alt="chicken-curry">
+          <h3>Chicken Curry</h3>
+          <p class="price">Rs 780</p>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="menu-section category-section dessert">
+      <h2>Desserts</h2>
+      <div class="menu-container">
+        <div class="menu-item dessert" data-id="cheesecake">
+          <img src="dessert1.jpeg" alt="cheesecake">
+          <h3>Cheesecake</h3>
+          <p class="price">Rs 450</p>
+        </div>
+        <div class="menu-item dessert" data-id="chocolate-brownie">
+          <img src="dessert2.jpeg" alt="chocolate-brownie">
+          <h3>Chocolate Brownie</h3>
+          <p class="price">Rs 400</p>
+        </div>
+        <div class="menu-item dessert" data-id="tiramisu">
+          <img src="dessert3.jpeg" alt="tiramisu">
+          <h3>Tiramisu</h3>
+          <p class="price">Rs 480</p>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="menu-section category-section beverage">
+      <h2>Beverages</h2>
+      <div class="menu-container">
+        <div class="menu-item beverage" data-id="lemonade">
+          <img src="beverage1.jpeg" alt="lemonade">
+          <h3>Fresh Lemonade</h3>
+          <p class="price">Rs 200</p>
+        </div>
+        <div class="menu-item beverage" data-id="espresso-coffee">
+          <img src="beverage2.jpeg" alt="espresso-coffee">
+          <h3>Espresso Coffee</h3>
+          <p class="price">Rs 220</p>
+        </div>
+        <div class="menu-item beverage" data-id="fruit-smoothie">
+          <img src="beverage3.jpeg" alt="fruit-smoothie">
+          <h3>Fruit Smoothie</h3>
+          <p class="price">Rs 260</p>
+        </div>
+      </div>
+    </div>
+  
+    <footer>
+      <p>&copy; 2025 Heavenly Bite. All rights reserved.</p>
+    </footer>
+  
+  
+<script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sections = document.querySelectorAll('.category-section');
+  
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+  
+        const category = button.getAttribute('data-category');
+        sections.forEach(section => {
+          section.classList.toggle('hidden', category !== 'all' && !section.classList.contains(category));
+        });
+      });
+    });
+  
+    
+    fetch('reviews.xml')
+      .then(res => res.text())
+      .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+      .then(data => {
+        const items = data.getElementsByTagName('item');
+        [...items].forEach(item => {
+          const id = item.getAttribute('id');
+          const ingredients = item.getElementsByTagName('ingredients')[0]?.textContent;
+          const description = item.getElementsByTagName('description')[0]?.textContent;
+          const review = item.getElementsByTagName('review')[0]?.textContent;
+  
+          const match = document.querySelector(`.menu-item[data-id="${id}"]`);
+          if (match) {
+            const ingredientsEl = document.createElement('p');
+            ingredientsEl.innerHTML = `Ingredients: ${ingredients}<br><br>`;
+            ingredientsEl.style.color = '#666';
+            ingredientsEl.style.fontSize = '0.85rem';
+  
+            const descriptionEl = document.createElement('p');
+            descriptionEl.innerHTML = `Description: ${description}<br><br>`;
+            descriptionEl.style.color = '#666';
+            descriptionEl.style.fontSize = '0.85rem';
+  
+            const reviewEl = document.createElement('p');
+            reviewEl.innerHTML = `Review: ${review}<br>`;
+            reviewEl.style.fontStyle = 'italic';
+            reviewEl.style.color = '#888';
+  
+            match.appendChild(ingredientsEl);
+            match.appendChild(descriptionEl);
+            match.appendChild(reviewEl);
+          }
+        });
+      });
+  
+  
+    document.querySelectorAll('.menu-item').forEach(item => {
+      const addButton = document.createElement('button');
+      addButton.textContent = 'Add ';
+      addButton.style.margin = '10px';
+      addButton.style.padding = '8px 15px';
+      addButton.style.border = 'none';
+      addButton.style.backgroundColor = '#555';
+      addButton.style.color = '#fff';
+      addButton.style.borderRadius = '20px';
+      addButton.style.cursor = 'pointer';
+      addButton.addEventListener('click', () => {
+        const id = item.getAttribute('data-id');
+        const name = item.querySelector('h3').textContent;
+        const price = parseFloat(item.querySelector('.price').textContent.replace('Rs', '').trim());
+  
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(product => product.id === id);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ id, name, price, quantity: 1 });
+        }
+  
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to Cart!`);
+      });
+      item.appendChild(addButton);
+    });
+
+    const searchInput = document.querySelector('.search-bar input');
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+
+  document.querySelectorAll('.menu-item').forEach(item => {
+    const itemName = item.querySelector('h3').textContent.toLowerCase();
+    if (itemName.includes(query)) {
+      item.classList.remove('hidden-by-search');
+    } else {
+      item.classList.add('hidden-by-search');
+    }
+  });
+
+  
+  document.querySelectorAll('.category-section').forEach(section => {
+    const visibleItems = section.querySelectorAll('.menu-item:not(.hidden-by-search)');
+    section.style.display = visibleItems.length > 0 ? '' : 'none';
+  });
+});
+  </script>
+  
+  </body>
+  </html>
